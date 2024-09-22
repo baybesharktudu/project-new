@@ -6,7 +6,10 @@ import helmet from "helmet";
 import morgan from "morgan";
 // ROUTE IMPORT
 import projectRoutes from "./routes/projectRoute";
-import taskRoutes from "./routes/taskRoutes"
+import taskRoutes from "./routes/taskRoutes";
+import searchRoutes from "./routes/searchRoutes";
+import userRoutes from "./routes/userRoutes";
+import teamRoutes from "./routes/teamRoutes";
 
 // CONFIG
 dotenv.config();
@@ -22,6 +25,9 @@ app.use(cors());
 // ROUTE
 app.use("/projects", projectRoutes);
 app.use("/tasks", taskRoutes);
+app.use("/search", searchRoutes);
+app.use("/users", userRoutes);
+app.use("/teams", teamRoutes);
 
 // SERVER
 const port = process.env.PORT || 3000;

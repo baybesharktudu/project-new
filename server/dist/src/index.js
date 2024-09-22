@@ -12,6 +12,9 @@ const morgan_1 = __importDefault(require("morgan"));
 // ROUTE IMPORT
 const projectRoute_1 = __importDefault(require("./routes/projectRoute"));
 const taskRoutes_1 = __importDefault(require("./routes/taskRoutes"));
+const searchRoutes_1 = __importDefault(require("./routes/searchRoutes"));
+const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
+const teamRoutes_1 = __importDefault(require("./routes/teamRoutes"));
 // CONFIG
 dotenv_1.default.config();
 const app = (0, express_1.default)();
@@ -25,6 +28,9 @@ app.use((0, cors_1.default)());
 // ROUTE
 app.use("/projects", projectRoute_1.default);
 app.use("/tasks", taskRoutes_1.default);
+app.use("/search", searchRoutes_1.default);
+app.use("/users", userRoutes_1.default);
+app.use("/teams", teamRoutes_1.default);
 // SERVER
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
